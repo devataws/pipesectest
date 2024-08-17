@@ -1,3 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['echo', '$MESSAGE']
+  args: ['us-central1-docker.pkg.dev/pipesec/gcf-artifacts/function--1:version_1', '--message', '$(MESSAGE)']  # Replace 'your-function-image' with your actual image
+env:
+  - name: MESSAGE
+    value: '  # This will be populated by the trigger (optional)'
